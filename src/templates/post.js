@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 
 export default function Post({ data: { mdx } }) {
+  console.log(mdx.body);
   return <MDXRenderer>{mdx.body}</MDXRenderer>;
 }
 
