@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 
@@ -50,7 +50,7 @@ const Blog = ({
 
           <small>{post.frontmatter.date}</small>
 
-          <p>{post.excerpt}</p>
+          <MDXRenderer>{post.body}</MDXRenderer>
 
           <Link to={post.frontmatter.slug}>Continue Reading</Link>
         </div>
@@ -90,6 +90,7 @@ export const pageQuery = graphql`
         node {
           excerpt(pruneLength: 300)
           id
+          body
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
