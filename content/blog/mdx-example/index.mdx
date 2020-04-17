@@ -1,14 +1,17 @@
 ---
-slug: "/mdx-example"
-date: "2017-07-13T03:49:16.408Z"
-title: "MDX Example"
-description: "MDX Example Description ..."
-categories: ["react"]
-keywords: ["react"]
-banner: "./images/banner.jpg"
+slug: '/mdx-example'
+date: '2017-07-13T03:49:16.408Z'
+title: 'MDX Example'
+description: 'MDX Example Description ...'
+categories: ['react']
+keywords: ['react']
+banner: './images/banner.jpg'
 ---
 
-import Counter from "$components/Counter";
+import Counter from '$components/Counter';
+import Layout from '$components/mdx-test-layout';
+
+export default Layout;
 
 Showcasing how MDX for Gatsby.js works ... The Counter component is imported explicitly, but since we are using MDXProvider, we can also define global components which don't need to be imported (e.g. Link, YouTube).
 
@@ -21,15 +24,15 @@ Showcasing how MDX for Gatsby.js works ... The Counter component is imported exp
 ```jsx{1,4-6}
 import React from 'react';
 
-const Counter = initialCounter => {
+const Counter = (initialCounter) => {
   const [counter, setCounter] = React.useState(initialCounter);
 
   const onIncrement = () => {
-    setCounter(c => c + 1);
+    setCounter((c) => c + 1);
   };
 
   const onIncrement = () => {
-    setCounter(c => c - 1);
+    setCounter((c) => c - 1);
   };
 
   return (

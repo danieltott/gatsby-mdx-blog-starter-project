@@ -41,6 +41,14 @@ module.exports = {
             },
           },
         ],
+        defaultLayouts: {
+          blog: require.resolve(
+            './src/components/mdx-test-layout.js',
+          ),
+          default: require.resolve(
+            './src/components/mdx-test-layout.js',
+          ),
+        },
       },
     },
     'gatsby-plugin-sharp',
